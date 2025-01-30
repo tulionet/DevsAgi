@@ -26,9 +26,6 @@ public class Quarta {
             case 5:
                 atv5();
                 break;
-            case 6:
-                atv6();
-                break;
             default:
                 System.out.println("Opção inválida.[");
                 break;
@@ -121,19 +118,21 @@ public class Quarta {
  /*       Calcule a expressão, sem utilizar a função pow() da math.h: XY
         Onde: X e Y são digitados pelo usuário*/
         Scanner sc = new Scanner(System.in);
+
         System.out.print("Calculo de exponenciação!\nDigite um valor base: ");
         int vlr = sc.nextInt();
         System.out.print("Digite um valor como expoente: ");
         int exp = sc.nextInt();
 
         int vlrBase = vlr;
+        double resultado = 0;
 
         if (exp == 0) {
             System.out.println(1);
         } else if (exp < 0) {
-            System.out.println("Não suportado expoente negativo.");
+            resultado = 1 / Math.abs(exp);
+            System.out.printf("%.2f\n", resultado);
         } else {
-
             for (int i = 1; i < exp; i++) {
                 vlr = vlr * vlrBase;
             }

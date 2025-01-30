@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (true) {
-        System.out.println("Digite qual semana deseja visualizar:\n1 - Segunda-Feira\n2 - Terça-Feira\n3 - Quarta-Feira\n4 - Quinta-Feira\n5 - Sexta-Feira\n6 - Sair");
+        System.out.println("\nDigite qual semana deseja visualizar:\n1 - Segunda-Feira\n2 - Terça-Feira\n3 - Quarta-Feira\n4 - Quinta-Feira\n5 - Sexta-Feira\n6 - Sair");
             switch (sc.nextInt()) {
                 case 1:
                     new Segunda().main();
