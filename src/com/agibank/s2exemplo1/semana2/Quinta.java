@@ -107,7 +107,7 @@ public class Quinta {
             totalCompra += compra;
         } while(compra != 0);
         if (totalCompra > 300 && totalCompra <= 500) {
-            vlrDesconto = totalCompra * 0.005;
+            vlrDesconto = totalCompra * 0.05;
             totalCompraDesconto = totalCompra - vlrDesconto;
         } else if (totalCompra > 500 && totalCompra <= 1000) {
             vlrDesconto = totalCompra * 0.1;
