@@ -165,7 +165,5 @@ public class Sexta {
         t += 0.01;
         System.out.printf("X: %.2f Y: %.2f\n", x, y);
         }
-
-
     }
 }
