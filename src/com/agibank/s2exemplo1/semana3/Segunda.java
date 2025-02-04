@@ -54,10 +54,9 @@ public class Segunda {
         for (int i = 1; i < vet.length; i++) {
             if (maior < vet[i]) {
                 maior = vet[i];
-            } else if (menor > vet[i]) {
+            }
+            if (menor > vet[i]) {
                 menor = vet[i];
-            } else {
-                System.out.println("Erro");
             }
         }
         System.out.printf("Maior: %.2f Menor: %.2f\n", maior, menor);
@@ -84,21 +83,21 @@ public class Segunda {
     }
 
     public void atv5() {
-        double[] vet = {100, 500, 300, 400, 100, 150, 200, 300, 950, 200};
+    /*    double[] vet = {102, 100, 104, 105, 110, 111, 95, 91, 96, 101};
         int[] diasAlta = new int[3];
         double aux = vet[0];
         int cont = 0;
 
-        for (int i = 0; i < vet.length; i++) {
+        for (int i = 1; i < vet.length; i++) {
 
             if (aux < vet[i]) {
                 cont++;
                 System.out.printf("O valor: %.2f é menor que o %.2f", aux, vet[i]);
                 System.out.println(" Contador: " + cont  );
                 if (cont == 3) {
-                    diasAlta[0] = i - 2;
-                    diasAlta[1] = i - 1;
-                    diasAlta[2] = i;
+                    diasAlta[0] = i - 2 + 1;
+                    diasAlta[1] = i - 1 + 1;
+                    diasAlta[2] = i + 1;
                     break;
                 }
             } else {
@@ -114,5 +113,26 @@ public class Segunda {
                 System.out.println(Arrays.toString(diasAlta));
             }
 
+    */
+
+        double[] vet = {100, 200, 300, 400, 500, 600, 300, 100, 200, 300};
+        int priDia, ultiDia = 0;
+
+        for (int i = 0; i < vet.length - 2; i++) {
+            if (vet[i] < vet[i + 1] && vet[i + 1] < vet[i + 2]) {
+                priDia = i;
+//              System.out.printf("Tendência do dia %d até o %d\n", i+1 , i+3);
+                int j = i+2;
+                if (j+1 != vet.length){
+                    while (vet[j] < vet[j+1]) {
+                        j++;
+                    }
+                }
+                ultiDia = j;
+                System.out.printf("Tendência total do dia %d até o %d\n", priDia+1, ultiDia+1);
+                i = j;
+            }
+
+        }
     }
 }
