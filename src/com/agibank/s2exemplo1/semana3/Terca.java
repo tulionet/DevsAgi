@@ -55,9 +55,9 @@ public class Terca {
             percentuais[cont] = i / total * 100;
             cont++;
         }
-        System.out.printf("Total investido = %.2f\n", total);
+        System.out.printf("Total investido = R$%.2f\n", total);
         System.out.print("Percentual de cada ação: ");
-        for (double i: percentuais) System.out.printf(" %.2f ", i);
+        for (double i: percentuais) System.out.printf(" %.2f%% ", i);
     }
 
 
@@ -71,7 +71,9 @@ public class Terca {
             total += diferenca[i];
         }
         if (total > 20000) {
-            total = total - (total * 0.15);
+            double dif = total - 20000;
+            total = total - (dif * 0.15);
+            System.out.println("Imposto aplicado : " + total * 0.15);
         }
         System.out.println("Lucro total: R% " + total);
     }
