@@ -23,7 +23,7 @@ public class Terca {
                 atv4();
                 break;
             case 5:
-//                atv5();
+                atv5();
                 break;
             default:
                 System.out.println("Opção inválida.[");
@@ -87,6 +87,29 @@ public class Terca {
             vet[i] = vet[i-1] * (1+taxa);
             System.out.printf("%.2f ", vet[i]);
         }
+    }
+
+    public void atv5() {
+        double[] precos =  {100.0, 105.0, 102.0, 110.0, 108.0, 107.0, 95.0, 97.0, 99.0, 103.0};
+        double drawdown = 0;
+        double picoMaxAnterior = precos[0];
+        int cont = 0;
+
+        for (int i = 1; i < precos.length; i++) {
+            if (picoMaxAnterior < precos[i]) {
+                picoMaxAnterior = precos[i];
+                i++;
+            }
+        }
+        double picoMinAnterior = precos[cont];
+        for (int i = cont; i < precos.length; i++) {
+            if(picoMinAnterior > precos[i]){
+                picoMinAnterior = precos[i];
+            }
+        }
+        drawdown = ((picoMinAnterior - picoMaxAnterior) / picoMaxAnterior) * 100;
+
+        System.out.printf("Maior Drawdown: %.2f%%", drawdown);
 
     }
 }
