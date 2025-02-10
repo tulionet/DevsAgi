@@ -1,16 +1,12 @@
 package com.agibank.s2exemplo1.semana3;
 
-import com.agibank.s2exemplo1.semana2.Terca;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Segunda {
-    public void main() {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite qual atividade deseja fazer de 1 a 5");
         var vlr = sc.nextInt();
-        Terca terca = new Terca();
 
         switch (vlr) {
             case 1:
@@ -35,7 +31,7 @@ public class Segunda {
     }
 
 
-    public void atv1() {
+    public static void atv1() {
         double[] vet = {100.0, 101.5, 99.0, 102.0, 105.0};
 
         double percentualDiario = vet[0];
@@ -47,7 +43,7 @@ public class Segunda {
 
     }
 
-    public void atv2() {
+    public static void atv2() {
         double[] vet = {98.5, 102.0, 100.5, 101.0, 105.0, 107.5, 110.0, 108.5, 106.0, 109.5};
         double maior = vet[0];
         double menor = vet[0];
@@ -62,7 +58,7 @@ public class Segunda {
         System.out.printf("Maior: %.2f Menor: %.2f\n", maior, menor);
     }
 
-    public void atv3() {
+    public static void atv3() {
         double[] vet = {98.5, 102.0, 100.5, 101.0, 105.0, 107.5, 110.0};
         double mediaMovel = 0;
         for (int i = vet.length-1; i > vet.length-4; i--) {
@@ -72,7 +68,7 @@ public class Segunda {
         System.out.println("Média móvel dos últimos 3 dias: " + mediaMovel);
     }
 
-    public void atv4() {
+    public static void atv4() {
         double[] vet = {98.5, 102.0, 100.5, 101.0, 105.0};
         double vlrAnterior = vet[0];
         double crescimentoDiario = 0;
@@ -82,7 +78,7 @@ public class Segunda {
         }
     }
 
-    public void atv5() {
+    public static void atv5() {
     /*    double[] vet = {102, 100, 104, 105, 110, 111, 95, 91, 96, 101};
         int[] diasAlta = new int[3];
         double aux = vet[0];

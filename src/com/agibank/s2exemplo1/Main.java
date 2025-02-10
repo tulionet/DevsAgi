@@ -1,6 +1,5 @@
 package com.agibank.s2exemplo1;
 
-import com.agibank.s2exemplo1.semana1.Atividade_1;
 import com.agibank.s2exemplo1.semana3.*;
 
 import java.util.Scanner;
@@ -12,7 +11,7 @@ public class Main {
         System.out.println("\nDigite qual semana deseja visualizar:\n1 - Segunda-Feira\n2 - Terça-Feira\n3 - Quarta-Feira\n4 - Quinta-Feira\n5 - Sexta-Feira\n6 - Sair");
             switch (sc.nextInt()) {
                 case 1:
-                    new Segunda().main();
+                    Segunda.main(new String[0]);
                     break;
                 case 2:
                     new Terca().main();

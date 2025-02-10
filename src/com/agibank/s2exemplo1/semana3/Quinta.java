@@ -1,8 +1,6 @@
 package com.agibank.s2exemplo1.semana3;
 
-import com.agibank.s2exemplo1.semana2.Terca;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Quinta {
@@ -10,7 +8,6 @@ public class Quinta {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite qual atividade deseja fazer de 1 a 5");
         var vlr = sc.nextInt();
-        com.agibank.s2exemplo1.semana2.Terca terca = new Terca();
 
         switch (vlr) {
             case 1:
