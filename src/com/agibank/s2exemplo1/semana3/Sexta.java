@@ -69,7 +69,7 @@ public class Sexta {
             else if (i == 3) taxaJuros = 10;
             taxaJuros = (taxaJuros / 100) / 12;
             for (int j = 0; j < matriz[0].length; j++) {
-                matriz[i][j] = contribMensal * (Math.pow(1+taxaJuros, totalAnos*12)-1) / taxaJuros;
+                matriz[i][j] = contribMensal * (Math.pow(1+taxaJuros, (j+1) * 12)-1) / taxaJuros;
             }
         }
         System.out.println("\nSaldo final estimado!");
