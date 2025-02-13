@@ -1,6 +1,6 @@
 package com.agibank.s2exemplo1;
 
-import com.agibank.s2exemplo1.semana3.*;
+import com.agibank.s2exemplo1.semana4.*;
 
 import java.util.Scanner;
 
