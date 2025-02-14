@@ -27,6 +27,21 @@ public class Quinta {
             case 5:
                 atv5();
                 break;
+            case 6:
+                atv6();
+                break;
+            case 7:
+                atv7();
+                break;
+            case 8:
+                atv8();
+                break;
+            case 9:
+                atv9();
+                break;
+//            case 10:
+//                atv10();
+//                break;
             default:
                 System.out.println("Opção inválida.[");
                 break;
@@ -121,6 +136,84 @@ public class Quinta {
                 totalMovimentado += matriz[i][j];
             }
             System.out.printf("Cliente %d: Total Movimentado = %.2f | Saldo Final = %.2f\n", i, totalMovimentado, saldoTotal);
+        }
+    }
+    public void atv6 () {
+/*
+        Conversão de Moeda para Viagem: Um turista deseja converter valores em reais para dólares ao longo de 7 dias de viagem. O programa deve:
+        Criar um vetor com os valores gastos em reais por dia.
+        Converter cada valor para dólares usando uma taxa fixa informada pelo usuário.
+*/
+        double[] valoresReais = {100,200,300,400,500,600,700};
+        float taxa = 5;
+        double[] valoresDolares = new double[valoresReais.length];
+
+        for (int i = 0; i < valoresReais.length; i++) {
+            valoresDolares[i] = valoresReais[i] / taxa;
+        }
+        System.out.println("Valores Convertidos: \n");
+        for (int i = 0; i < valoresReais.length; i++) {
+            System.out.printf("%.2f ", valoresDolares[i] );
+        }
+    }
+
+
+    public void atv7 () {
+/*
+        6. Cálculo do Retorno Médio de um Investimento: Um investidor aplica dinheiro em uma ação
+        por N dias. Ele deseja calcular o retorno médio diário, definido como:
+        RetornoMedio = (1 / N-1) E(((Pi-1-P)/Pi-1)×100)
+*/
+        double[] valores = {100,102,101,103,105};
+        double somaTotal = 0;
+        for (int i = 0; i < valores.length-1; i++) {
+            somaTotal += ((valores[i+1] - valores[i]) / valores[i]) * 100;
+        }
+        double resultado = (1f/(valores.length-1)) * somaTotal;
+        System.out.println(resultado);
+    }
+
+    public void atv8 () {
+/*            7. Matriz de Risco de Ativos: Dada uma matriz A de N x M, onde cada linha representa um ativo
+        financeiro e cada coluna representa o retorno do ativo em um determinado dia, calcule o risco
+        total de cada ativo. O risco é definido como a soma do módulo das variações diárias:
+        Risco =Σ|Αi,j+1 -Αi,j !|
+            */
+        double[][] matriz = {
+                {1.0,1.2,1.1,1.3},
+                {0.9,1.0,1.1,1.2},
+                {1.5,1.6,1.4,1.3}
+        };
+        for (int i = 0; i < matriz.length; i++) {
+        double somaVariacoes = 0;
+            for (int j = 0; j < matriz[0].length-1; j++) {
+                somaVariacoes += Math.abs((matriz[i][j+1] - matriz[i][j]));
+            }
+            System.out.printf("%.1f ", somaVariacoes);
+        }
+    }
+
+    public void atv9 () {
+        double vlrEmprestimo = 10000;
+        double taxaJurosMensal = 0.02;
+        int numParcelas = 12;
+        double vlrParcela = (vlrEmprestimo*taxaJurosMensal) / (1-Math.pow(1+taxaJurosMensal, -numParcelas));
+        System.out.println(vlrParcela);
+        double[][] matriz = new double[5][numParcelas];
+
+
+        for (int i = 0; i < matriz[0].length; i++) {
+            matriz[0][i] = i+1;                               // número da parcela;
+            matriz[1][i] = i == 0 ? vlrEmprestimo : matriz[4][i-1]; // saldo devedor antes do pagamento
+            matriz[2][i] = matriz[1][i] * taxaJurosMensal;                           //valorjuros
+            matriz[3][i] = vlrParcela - matriz[2][i];                           // amortização
+            matriz[4][i] = matriz[1][i] - matriz[3][i];                           // saldo devedor após o pagamento
+        }
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                System.out.printf("%-15.2f", matriz[i][j]);
+            }
+            System.out.println();
         }
 
 
