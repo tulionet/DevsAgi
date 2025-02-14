@@ -23,7 +23,7 @@ public class Main {
                     new Quinta().main();
                     break;
                 case 5:
-                    new Sexta().main();
+                    Sexta.main(new String[0]);
                     break;
                 case 6:
                     System.exit(0);
