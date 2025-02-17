@@ -333,6 +333,7 @@ public class Sexta {
         }
         return valores;
 
+
     }
     public static double consultaPreco(double[][] matriz, byte ativo, int dia) {
         ativo--;
