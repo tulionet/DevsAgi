@@ -197,9 +197,9 @@ public class Sexta {
         simula preços diários das ações. Use os dados da tabela na matriz como entrada em hardcode.
 */
         double[][] matriz = {
-                {22.5, 23.0, 22.0, 24.5, 25.0},//PETR4
-                {85.0, 86.5, 84.0, 83.5, 87.0},//VALE3
-                {30.0, 29.5, 30.5, 31.0, 32.5}//ITUB4
+                {22.5, 23.0, 22.0, 24.5, 25.0},//PETR4   0
+                {85.0, 86.5, 84.0, 83.5, 87.0},//VALE3   1
+                {30.0, 29.5, 30.5, 31.0, 32.5}//ITUB4    2
         };
         String[] ativo = {
                 "PETR4", "VALE3", "ITUB4"
@@ -312,7 +312,7 @@ public class Sexta {
 
     public static double[] maiorValorizacao(double[][] matriz) {
         double valorização = 0;
-        double[] ativoValorizado = new double[2];
+        double[] ativoValorizado = new double[matriz.length];
         int tamanho = matriz[0].length - 1;
         for (int i = 0; i < matriz.length ; i++) {
             if (valorização < ((matriz[i][tamanho] - matriz[i][0]) / matriz[i][0]) * 100) {
@@ -323,6 +323,7 @@ public class Sexta {
         }
         return ativoValorizado;
     }
+
     public static double[] simulaLucroPerda(double[][] matriz) {
         double[] valores = new double[matriz.length];
         double valorização = 0;
